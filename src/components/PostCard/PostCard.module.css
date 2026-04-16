@@ -207,17 +207,24 @@
 .actionBtn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
+  gap: 6px;
   padding: 14px 8px 14px 16px;
   background: none;
   border: none;
-  border-radius: var(--radius-12);
   cursor: pointer;
 }
 
 .actionBtn:not(:first-child) {
   padding: 14px 4px 14px 12px;
+}
+
+.actionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .actionCount {

@@ -93,21 +93,27 @@ export default function PostCard({
 
         <div className={styles.actionBar}>
           <button className={styles.actionBtn}>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M10 17.5C10 17.5 2.5 13 2.5 7.5C2.5 5.43 4.18 3.75 6.25 3.75C7.5 3.75 8.6 4.37 9.25 5.32C9.9 4.37 11 3.75 12.25 3.75C14.32 3.75 16 5.43 16 7.5C16 13 10 17.5 10 17.5Z" stroke="#999" strokeWidth="1.5" fill="none"/>
-            </svg>
+            <span className={styles.actionIcon}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 17.5s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0117 8.5c0 4.5-7 9-7 9z" stroke="var(--color-gray-400)" strokeWidth="1.5" strokeLinejoin="round" />
+              </svg>
+            </span>
             <span className={styles.actionCount}>{likeCount}</span>
           </button>
           <button className={styles.actionBtn}>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M17.5 10C17.5 13.31 14.14 16 10 16C9.14 16 8.32 15.87 7.56 15.63L3.75 17.5L4.87 14.18C3.97 13.14 3.5 11.88 3.5 10.5C3.5 7.19 6.86 4.5 11 4.5" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-            </svg>
+            <span className={styles.actionIcon}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M3 5a2 2 0 012-2h10a2 2 0 012 2v7a2 2 0 01-2 2H8l-3.5 2.5V14H5a2 2 0 01-2-2V5z" stroke="var(--color-gray-400)" strokeWidth="1.5" strokeLinejoin="round" />
+              </svg>
+            </span>
             <span className={styles.actionCount}>{commentCount}</span>
           </button>
           <button className={styles.actionBtn}>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M5 3.75H15C15.69 3.75 16.25 4.31 16.25 5V17.5L10 14.38L3.75 17.5V5C3.75 4.31 4.31 3.75 5 3.75Z" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-            </svg>
+            <span className={styles.actionIcon}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5 3h10a1 1 0 011 1v13.5l-5.5-3.5L5 17.5V4a1 1 0 011-1z" stroke="var(--color-gray-400)" strokeWidth="1.5" strokeLinejoin="round" />
+              </svg>
+            </span>
             <span className={styles.actionCount}>{bookmarkCount}</span>
           </button>
         </div>

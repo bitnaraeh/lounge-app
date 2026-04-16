@@ -16,6 +16,7 @@ interface VideoReelRowProps {
 
 export default function VideoReelRow({ city, label }: VideoReelRowProps) {
   const [videos, setVideos] = useState<VideoItem[]>([])
+  const [loading, setLoading] = useState(true)
   const [activeIdx, setActiveIdx] = useState<number | null>(null)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -25,9 +26,11 @@ export default function VideoReelRow({ city, label }: VideoReelRowProps) {
   const autoRef = useRef(false) // 자동재생 진행 중 여부
 
   useEffect(() => {
+    setLoading(true)
     fetch(`/api/videos?city=${encodeURIComponent(city)}&limit=5`)
       .then((r) => r.json())
       .then((json) => { if (json.success) setVideos(json.data) })
+      .finally(() => setLoading(false))
   }, [city])
 
   const stopAll = useCallback(() => {
@@ -97,7 +100,31 @@ export default function VideoReelRow({ city, label }: VideoReelRowProps) {
     }
   }
 
-  if (videos.length === 0) return null
+  if (!loading && videos.length === 0) return null
+
+  if (loading) {
+    return (
+      <div className={styles.wrap}>
+        <div className={styles.labelRow}>
+          <span className={styles.labelIcon}>{'▶'}</span>
+          <span className={styles.labelText}>{label || `${city} 추천 영상`}</span>
+        </div>
+        <div className={styles.inner}>
+          <div className={styles.scroll}>
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className={styles.card}>
+                <div className={styles.skeletonVideo} />
+                <div className={styles.skeletonInfo}>
+                  <div className={styles.skeletonLine} />
+                  <div className={styles.skeletonLineShort} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div ref={wrapRef} className={styles.wrap}>

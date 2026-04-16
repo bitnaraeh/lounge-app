@@ -116,7 +116,7 @@ export default function LoungePageV2({ simulateNoReservation = false }: LoungePa
               <div className={myStyles.ddayTextWrap}>
                 {hasReservation ? (
                   <span className={myStyles.ddayTitle}>
-                    {upcomingReservation!.city} {'\u{C5EC}\u{D589}'} <span className={myStyles.ddayBadge}>D-{getDday(upcomingReservation!.checkInDate)}</span>
+                    {upcomingReservation!.city} {'\u{C5EC}\u{D589}'} <span className={myStyles.ddayBadge}>D-{Math.abs(getDday(upcomingReservation!.checkInDate))}</span>
                   </span>
                 ) : (
                   <span className={myStyles.ddayTitle}>
@@ -128,12 +128,13 @@ export default function LoungePageV2({ simulateNoReservation = false }: LoungePa
                 )}
               </div>
             </div>
+            <VideoReelRow city={myTripCity} />
             <div className={styles.feed}>
               {loading ? (
                 <div style={{ padding: '40px 16px', textAlign: 'center', color: '#999', fontSize: 14 }}>불러오는 중...</div>
               ) : filteredPosts.flatMap((post, i) => {
                 const cards = [<PostCard key={post.id} userName={post.userName} timeAgo={post.timeAgo} category={post.category} region={post.region} title={post.title} body={post.body} thumbnailUrl={post.thumbnailUrl} hotelName={post.hotelName} showBtozpick={post.showBtozpick} showRealbook={post.showRealbook} likeCount={post.likeCount} commentCount={post.commentCount} bookmarkCount={post.bookmarkCount} avatarUrl={post.avatarUrl} onClick={() => setSelectedPost(post)} />]
-                if ((i + 1) % 3 === 0) cards.push(<VideoReelRow key={`vr-${i}`} city={myTripCity} />)
+                if ((i + 1) % 5 === 0) cards.push(<VideoReelRow key={`vr-${i}`} city={myTripCity} />)
                 return cards
               })}
             </div>
