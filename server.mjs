@@ -141,6 +141,8 @@ const server = createServer(async (req, res) => {
           vs.image_domain,
           vs.thumbnail,
           h.name AS hotel_name,
+          h.city,
+          h.city_en,
           reg.depth_1,
           reg.country_name
         FROM video v
@@ -157,6 +159,9 @@ const server = createServer(async (req, res) => {
         id: row.id,
         caption: row.caption || '',
         hotelName: row.hotel_name || '',
+        city: row.city || '',
+        cityEn: row.city_en || '',
+        depth1: row.depth_1 || '',
         videoUrl: row.video_domain + row.video_url,
         thumbnailUrl: row.image_domain + row.thumbnail,
       }))
