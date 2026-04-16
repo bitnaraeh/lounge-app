@@ -1,4 +1,9 @@
-import data from '../src/data/exported/videos.json' assert { type: 'json' }
+import { readFileSync } from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const data = JSON.parse(readFileSync(join(__dirname, '../src/data/exported/videos.json'), 'utf-8'))
 
 export default function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -16,9 +21,6 @@ export default function handler(req, res) {
     )
   }
 
-  // 랜덤 5개 선택
-  const shuffled = filtered.sort(() => Math.random() - 0.5)
-  const sliced = shuffled.slice(0, limit)
-
-  res.status(200).json({ success: true, data: sliced })
+  const shuffled = [...filtered].sort(() => Math.random() - 0.5)
+  res.status(200).json({ success: true, data: shuffled.slice(0, limit) })
 }

@@ -1,4 +1,9 @@
-import data from '../src/data/exported/trip-talks.json' assert { type: 'json' }
+import { readFileSync } from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const data = JSON.parse(readFileSync(join(__dirname, '../src/data/exported/trip-talks.json'), 'utf-8'))
 
 export default function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -17,7 +22,5 @@ export default function handler(req, res) {
     )
   }
 
-  const sliced = filtered.slice(offset, offset + limit)
-
-  res.status(200).json({ success: true, data: sliced })
+  res.status(200).json({ success: true, data: filtered.slice(offset, offset + limit) })
 }
