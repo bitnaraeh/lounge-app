@@ -1,0 +1,23 @@
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 16px;
+  background: var(--color-white);
+}
+
+.time {
+  font-family: var(--font-sf-text);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: var(--color-black);
+}
+
+.rightIcons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

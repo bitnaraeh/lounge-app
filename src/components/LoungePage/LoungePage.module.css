@@ -1,0 +1,64 @@
+:root {
+  --color-black: #000000;
+  --color-gray-900: #121212;
+  --color-gray-700: #4D4D4D;
+  --color-gray-500: #808080;
+  --color-gray-400: #999999;
+  --color-gray-100: #E6E6E6;
+  --color-gray-50: #F1F1F1;
+  --color-white: #FFFFFF;
+  --color-bg-light-gray: #F2F4F6;
+  --color-primary-500: #7B3CFF;
+  --color-positive-blue: #1E82FF;
+  --color-positive-tint-blue: #F0F7FF;
+  --color-positive-border-blue: #D6E9FF;
+  --font-kr: "Apple SD Gothic Neo", -apple-system, sans-serif;
+  --font-en: "SF Pro Display", -apple-system, sans-serif;
+  --font-sf-text: "SF Pro Text", -apple-system, sans-serif;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-full: 100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-kr);
+  -webkit-font-smoothing: antialiased;
+  background: #f5f5f5;
+}
+
+.page {
+  width: 375px;
+  height: 100vh;
+  margin: 0 auto;
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.scrollArea {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/api/trip-talks", "destination": "/api/trip-talks" },
+    { "source": "/api/videos", "destination": "/api/videos" },
+    { "source": "/api/lounge-notices", "destination": "/api/lounge-notices" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

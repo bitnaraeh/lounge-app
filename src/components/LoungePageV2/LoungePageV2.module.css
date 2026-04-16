@@ -1,0 +1,86 @@
+.ddayHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px 16px 12px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-50);
+}
+
+.ddayEmoji {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ddayTextWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ddayTitle {
+  font-family: var(--font-kr);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-gray-900);
+  letter-spacing: -0.03px;
+  line-height: 1.4;
+}
+
+.ddayBadge {
+  font-family: var(--font-en);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--color-primary-500);
+  margin-left: 4px;
+}
+
+.ddaySub {
+  font-family: var(--font-kr);
+  font-size: 12px;
+  color: var(--color-gray-500);
+  letter-spacing: -0.024px;
+}
+
+/* Floating AI input bar */
+.floatingAI {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 18px;
+  background: var(--color-white);
+  border: 1.5px solid #E4D9FF;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 20px rgba(123, 60, 255, 0.12), 0 1px 4px rgba(0, 0, 0, 0.06);
+  cursor: text;
+  z-index: 100;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.floatingAI:active {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 4px 20px rgba(123, 60, 255, 0.2), 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.floatingAIIcon {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.floatingAIText {
+  flex: 1;
+  font-family: var(--font-kr);
+  font-size: 14px;
+  color: var(--color-gray-400);
+  letter-spacing: -0.028px;
+}

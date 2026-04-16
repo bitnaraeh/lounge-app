@@ -1,0 +1,113 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sheet {
+  width: 375px;
+  background: var(--color-white);
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  padding-bottom: 44px;
+}
+
+.sheetHeader {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 16px;
+}
+
+.sheetHeaderTitle {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-kr);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.036px;
+  color: var(--color-gray-900);
+}
+
+.closeBtn {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  background: var(--color-white);
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+.listItem:hover {
+  background: var(--color-gray-50);
+}
+
+.listIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 60px;
+  background: var(--color-bg-light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.listTextWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.listTitle {
+  font-family: var(--font-kr);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.032px;
+  color: var(--color-gray-900);
+}
+
+.listDesc {
+  font-family: var(--font-kr);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.028px;
+  color: var(--color-gray-500);
+  line-height: 1;
+}
+
+.homeIndicator {
+  height: 34px;
+  background: var(--color-white);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+
+.homeBar {
+  width: 134px;
+  height: 5px;
+  background: var(--color-black);
+  border-radius: 100px;
+}
