@@ -1,21 +1,8 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "functions": {
-    "api/trip-talks.js": {
-      "includeFiles": "src/data/exported/trip-talks.json"
-    },
-    "api/videos.js": {
-      "includeFiles": "src/data/exported/videos.json"
-    },
-    "api/lounge-notices.js": {
-      "includeFiles": "src/data/exported/notices.json"
-    }
-  },
-  "rewrites": [
-    { "source": "/api/trip-talks", "destination": "/api/trip-talks" },
-    { "source": "/api/videos", "destination": "/api/videos" },
-    { "source": "/api/lounge-notices", "destination": "/api/lounge-notices" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
