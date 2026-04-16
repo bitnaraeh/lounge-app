@@ -1,7 +1,4 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
-
-const data = JSON.parse(readFileSync(join(process.cwd(), 'src/data/exported/trip-talks.json'), 'utf-8'))
+import data from './data/trip-talks.js'
 
 export default function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*')
